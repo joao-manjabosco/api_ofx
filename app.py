@@ -7,6 +7,11 @@ import ofxparse
 app = Flask(__name__)
 app.secret_key = "5e83f80f0619a59a35a94d40186a9d2d" # Define a chave secreta para a aplicação Flask
 
+# Rota padrão
+@app.route('/')
+def padrao():
+    return "<h1>Api leitura OFX</h1>"
+
 # Rota para upload do arquivo OFX
 @app.route('/upload_ofx', methods=["POST"])
 def upload_ofx():
